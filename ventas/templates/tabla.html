@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <title>COMPRA/VENTA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+</head>
+
+<body>
+
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="nav-link text-success" href="#">BIENVENIDO {{user|upper}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+    </nav>
+
+    <div class="p-2 mb-2 bg-dark text-white" role="alert">
+        <h1 align="center">BIENVENIDOS A LA PAGINA WEB</h1>
+    </div>
+    <div>
+        <div>
+            <font color="#008b8b"><h4>COMPRAS</h4></font>
+            <table class="table table-bordered">
+
+                <thead class="thead-dark">
+                <tr align="center">
+
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Patente</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for compra in compras %}
+
+                <tr align="center">
+                    <td>{{compra.brand}}</td>
+                    <td>{{compra.model}}</td>
+                    <td>{{compra.patent}}</td>
+                </tr>
+                <tr>
+
+
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+            <div align="right"><a class="btn btn-primary " href="../venta/">Vender un auto</a></div>
+        </div>
+        <font color="#008b8b"><h4>VENTAS</h4></font>
+        <table class="table table-bordered">
+
+            <thead class="thead-dark">
+            <tr align="center">
+
+                <th scope="col">Venta</th>
+                <th scope="col">Precio</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ventas in ventas %}
+            <tr align="center">
+                <td>{{ventas.sale}}</td>
+                <td>{{ventas.price}}</td>
+
+            </tr>
+            <tr>
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

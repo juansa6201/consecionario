@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <title>Inicio</title>
+</head>
+<body>
+<div style="text-align: center">
+    {% if user.is_authenticated %}
+    <h3>¿Que desea hacer?</h3>
+    <a class="btn btn-primary" href="compra/">Comprar</a>
+    <a class="btn btn-primary" href="venta/">Vender</a>
+    <a class="btn btn-primary" href="tabla/">Tabla</a>
+    {% else %}
+    <a class="btn btn-primary" href="admin/">Iniciar Secion</a>
+    {% endif %}
+
+</div>
+</body>
+</html>
