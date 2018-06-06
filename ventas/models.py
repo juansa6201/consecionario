@@ -8,7 +8,7 @@ from django.db import models
 
 # Create your models here.
 class Purasche(models.Model):
-    user = models.ForeignKey(User, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=False)
     brand = models.CharField('Marca', max_length=20, null=False)
     model = models.CharField('Modelo', max_length=20, null=False)
     date_purasche = models.DateTimeField('Fecha de Compra', auto_now=True)
@@ -24,7 +24,7 @@ class Purasche(models.Model):
 
 
 class Sale(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=False)
     sale = models.ForeignKey(Purasche, related_name='aCount')
     price = models.IntegerField('Precio', null=False)
     sale.verbose_name = 'Venta'

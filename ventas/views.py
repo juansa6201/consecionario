@@ -20,6 +20,7 @@ def index(request):
     return render(request, 'tabla.html', todo)
 
 
+
 def post_compra(request):
     if request.method == "POST":
         form = FormCompra(request.POST)
@@ -32,7 +33,7 @@ def post_compra(request):
     else:
         form = FormCompra()
 
-    return render(request, 'compras.html', {'form': form})
+    return render(request, 'compras.html',{'form': form})
 
 
 def post_ventas(request):

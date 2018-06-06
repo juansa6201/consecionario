@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from ventas.views import index
-from ventas.views import post_compra
-from ventas.views import post_ventas
-from ventas.views import home
+from ventas.views import (index, post_compra, post_ventas,home)
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,4 +24,6 @@ urlpatterns = [
     url(r'^compra/', post_compra, name='post_compra'),
     url(r'^venta/', post_ventas, name='post_venta'),
     url(r'^$', home, name='home'),
+    url(r'^login/', auth_views.login,name='login'),
+    url(r'^logout/', auth_views.logout, name='logout'),
 ]

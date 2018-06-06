@@ -1,20 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <title>Ventas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>Compras</title>
 </head>
 <body>
+<form method="POST">
 
-<h1 style="color: darkcyan">Nueva Venta</h1>
-<form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Guardar</button>
+    <div class="form-group">{% csrf_token %}
+        <label>¿Que desea vender?</label>
+        {{form.sale}}
+    </div>
+    <div class="form-group">
+        <label>Precio</label>
+
+        {{form.price}}
+    </div>
+
+    <div class="form-group">
+        <label>Usuario</label>
+       {{form.user}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 </body>
 </html>
