@@ -26,8 +26,9 @@ def post_compra(request):
     if request.method == "POST":
         form = FormCompra(request.POST)
         if form.is_valid():
+
             post = form.save(commit=False)
-            post.author = request.user
+            post.user = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('index')
@@ -42,7 +43,7 @@ def post_ventas(request):
         form = FormVenta(request.user, request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
+            post.user = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('index')

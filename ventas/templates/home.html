@@ -11,14 +11,38 @@
 <body>
 <div style="text-align: center">
     {% if user.is_authenticated %}
-        <h3>¿Que desea hacer?</h3>
-        <a class="btn btn-primary" href="compra/">Comprar</a>
-        <a class="btn btn-primary" href="venta/">Vender</a>
-        <a class="btn btn-primary" href="tabla/">Tabla</a>
-        <a class="btn btn-primary" href="logout/">Logout</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="compra/">Comprar <span class="sr-only">(Comprar)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="venta/">Vender <span class="sr-only">(Comprar)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="tabla/">Tabla <span class="sr-only">(Comprar)</span></a>
+                        </a>
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <a class="btn btn-primary" href="logout/">Logout</a>
+        </nav>
+
+
+        </div>
+
     {% else %}
-        <a class="btn btn-primary" href="login/">Iniciar Sesion</a>
-        <a class="btn btn-primary" href="signup/">Registrarte</a>
+        <div>
+            <a class="btn btn-primary" href="login/">Iniciar Sesion</a>
+            <a class="btn btn-primary" href="signup/">Registrarte</a>
+        </div>
+
 
     {% endif %}
 

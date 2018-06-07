@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 class FormCompra(forms.ModelForm):
     class Meta:
         model = Purasche
-        fields = ('brand', 'model', 'patent', 'price', 'repairs', 'user')
+        fields = ('brand', 'model', 'patent', 'price', 'repairs',)
         widgets = {
             'brand': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -19,7 +19,7 @@ class FormCompra(forms.ModelForm):
             }),
             'patent': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Ingrese el precio'
+                'placeholder': 'Ingrese la patente'
             }),
             'price': forms.NumberInput(attrs={
                 'class': 'form-control',
@@ -27,24 +27,24 @@ class FormCompra(forms.ModelForm):
             }),
             'repairs': forms.NumberInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Ingrese el precio'
+                'placeholder': 'Ingrese el precio de las reparaciones'
             }),
-            'user':forms.Select(attrs={'class':'form-control'})
+            #'user':forms.Select(attrs={'class':'form-control'})
         }
 
 
 class FormVenta(forms.ModelForm):
     class Meta:
         model = Sale
-        fields = ('sale', 'price', 'user',)
+        fields = ('sale', 'price', )
 
         widgets = {
             'sale': forms.Select(attrs={'class': 'form-control'}),
             'price': forms.NumberInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Ingrese las reparaciones'
+                'placeholder': 'Ingrese el precio'
             }),
-            'user':forms.Select(attrs={'class':'form-control'})
+
         }
 
     def __init__(self, user, *args, **kwargs):

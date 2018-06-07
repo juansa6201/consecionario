@@ -13,7 +13,7 @@
 
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="nav-link text-success" href="#">BIENVENIDO {{user|upper}}</a>
+        <a class="nav-link text-success" href="#">BIENVENIDO {{ user|upper }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,8 @@
     <div>
         <div>
             <font color="#008b8b"><h4>COMPRAS</h4></font>
+            <div align="right"><a class="btn btn-primary " href="../venta/">Comprar un auto</a></div>
+            </br>
             <table class="table table-bordered">
 
                 <thead class="thead-dark">
@@ -41,15 +43,15 @@
                 <tbody>
                 {% for compra in compras %}
 
-                <tr align="center">
-                    <td>{{compra.brand}}</td>
-                    <td>{{compra.model}}</td>
-                    <td>{{compra.patent}}</td>
-                </tr>
-                <tr>
+                    <tr align="center">
+                        <td>{{ compra.brand }}</td>
+                        <td>{{ compra.model }}</td>
+                        <td>{{ compra.patent }}</td>
+                    </tr>
+                    <tr>
 
 
-                </tr>
+                    </tr>
                 {% endfor %}
                 </tbody>
 
@@ -68,15 +70,15 @@
             </thead>
             <tbody>
             {% for ventas in ventas %}
-            <tr align="center">
-                <td>{{ventas.sale}}</td>
-                <td>{{ventas.price}}</td>
+                <tr align="center">
+                    <td>{{ ventas.sale }}</td>
+                    <td>{{ ventas.price }}</td>
 
-            </tr>
-            <tr>
+                </tr>
+                <tr>
 
 
-            </tr>
+                </tr>
             {% endfor %}
             </tbody>
 
