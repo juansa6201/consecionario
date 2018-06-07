@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.utils import timezone
-
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 from .forms import *
 from models import *
 from django.shortcuts import render, get_object_or_404
@@ -51,4 +52,17 @@ def post_ventas(request):
 
     return render(request, 'ventas.html', {'form': form})
 
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/signup.html', {'form': form})
 # Create your views here.

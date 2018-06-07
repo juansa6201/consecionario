@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'concesionaria',
         'USER': 'root',
-        'PASSWORD': 'vivaandroid4.4',
+        'PASSWORD': os.environ.get("PASSWORD", ''),
 
     }
 }

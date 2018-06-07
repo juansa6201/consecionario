@@ -11,12 +11,15 @@
 <body>
 <div style="text-align: center">
     {% if user.is_authenticated %}
-    <h3>¿Que desea hacer?</h3>
-    <a class="btn btn-primary" href="compra/">Comprar</a>
-    <a class="btn btn-primary" href="venta/">Vender</a>
-    <a class="btn btn-primary" href="tabla/">Tabla</a>
+        <h3>¿Que desea hacer?</h3>
+        <a class="btn btn-primary" href="compra/">Comprar</a>
+        <a class="btn btn-primary" href="venta/">Vender</a>
+        <a class="btn btn-primary" href="tabla/">Tabla</a>
+        <a class="btn btn-primary" href="logout/">Logout</a>
     {% else %}
-    <a class="btn btn-primary" href="login/">Iniciar Sesion</a>
+        <a class="btn btn-primary" href="login/">Iniciar Sesion</a>
+        <a class="btn btn-primary" href="signup/">Registrarte</a>
+
     {% endif %}
 
 </div>
